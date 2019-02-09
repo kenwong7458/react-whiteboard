@@ -156,9 +156,9 @@ export default class Whiteboard extends React.Component {
                                 }
                 this.state.historyAsObject.undoStack.push(img_record)
 
-                img.addEventListener("load", function() {
-                  //var canvas = document.getElementsByClassName("canvasArea")[0]
-                  //var ctx = canvas.getContext("2d")
+                img.addEventListener("load", () => {
+                  //this.canvas = document.getElementsByClassName("canvasArea")[0]
+                  this.ctx = this.canvas.getContext("2d")
                   this.ctx.drawImage(img, this.canvas.width/2 -img.width/2,
                                      this.canvas.height/2 - img.height/2)
                 }, false)
